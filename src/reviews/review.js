@@ -3,15 +3,24 @@ import './review.css'
 import { useContext, useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight, FaQuoteRight } from "react-icons/fa";
 import { Usercontext } from "../App";
-import user from "http://localhost:3000/data.json";
+
 export default function Review() {
+    
     const Userreview = useContext(Usercontext);
 
     const [Index, setIndex] = useState(0);
-  
+    const [user, setuser] = useState();
     const { name, image, job, text} = user[Index];
   
+  useEffect(() => {
+    const axios = require("axios");
 
+    // Make a request for a user with a given ID
+    axios.get("http://localhost:3000/data.json").then(function (response) {
+      // handle success
+        setuser({ ...response.data });
+    });
+  }, []);
     const random = () => {
         let Index = Math.floor(Math.random() * 4);
         if (Index === user.id) {
