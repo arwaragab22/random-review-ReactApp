@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/random-review-ReactApp/static/css/main.187d22f8.css",
-    "main.js": "/random-review-ReactApp/static/js/main.d1ac099d.js",
+    "main.js": "/random-review-ReactApp/static/js/main.68244202.js",
     "static/js/787.28cb0dcd.chunk.js": "/random-review-ReactApp/static/js/787.28cb0dcd.chunk.js",
     "index.html": "/random-review-ReactApp/index.html",
     "main.187d22f8.css.map": "/random-review-ReactApp/static/css/main.187d22f8.css.map",
-    "main.d1ac099d.js.map": "/random-review-ReactApp/static/js/main.d1ac099d.js.map",
+    "main.68244202.js.map": "/random-review-ReactApp/static/js/main.68244202.js.map",
     "787.28cb0dcd.chunk.js.map": "/random-review-ReactApp/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.187d22f8.css",
-    "static/js/main.d1ac099d.js"
+    "static/js/main.68244202.js"
   ]
 }
