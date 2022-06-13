@@ -13,11 +13,12 @@ function App() {
 
 // Make a request for a user with a given ID
 axios
-  .get('./data.json')
+  .get(
+    "https://github.com/arwaragab22/random-review-ReactApp/blob/master/src/data.json"
+  )
   .then(function (response) {
     // handle success
     setreviews(response.data);
-  
   });
   },[])
   return (
