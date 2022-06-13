@@ -12,14 +12,10 @@ function App() {
     const axios = require('axios');
 
 // Make a request for a user with a given ID
-axios
-  .get(
-    "https://github.com/arwaragab22/random-review-ReactApp/blob/master/src/data.json"
-  )
-  .then(function (response) {
-    // handle success
-    setreviews(response.data);
-  });
+axios.get("http://localhost:3000/data.json").then(function (response) {
+  // handle success
+  setreviews(response.data);
+});
   },[])
   return (
     <Usercontext.Provider value={reviews}>

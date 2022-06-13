@@ -3,7 +3,7 @@ import './review.css'
 import { useContext, useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight, FaQuoteRight } from "react-icons/fa";
 import { Usercontext } from "../App";
-import user from "https://github.com/arwaragab22/random-review-ReactApp/blob/master/src/data.json";
+import user from "http://localhost:3000/data.json";
 export default function Review() {
     const Userreview = useContext(Usercontext);
 
