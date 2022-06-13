@@ -3,35 +3,32 @@ import './review.css'
 import { useContext, useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight, FaQuoteRight } from "react-icons/fa";
 import { Usercontext } from "../App";
-
+import  data from  '../data.json';
 export default function Review() {
     
-    const Userreview = useContext(Usercontext);
 
+    const [Userreview, setUserview] = useContext(Usercontext);
     const [Index, setIndex] = useState(0);
     const [user, setuser] = useState();
-    const { name, image, job, text} = user[Index];
+    const {id, name, job, image, text} = data[Index];
   
-  useEffect(() => {
-    const axios = require("axios");
+    useEffect(() => {
+   
+    
+        console.log("hi");
+       
+        console.log(data[Index]);
 
-    // Make a request for a user with a given ID
-    axios.get("http://localhost:3000/data.json").then(function (response) {
-      // handle success
-        setuser({ ...response.data });
-    });
-  }, []);
+    }
+   ,[Index] );
+    
     const random = () => {
         let Index = Math.floor(Math.random() * 4);
-        if (Index === user.id) {
-            setIndex(Index + 1);
-         
-        }
-        else {
+      
               setIndex(Index);
             
 
-        }
+        
       
 
 
@@ -41,7 +38,7 @@ export default function Review() {
 
 
     const after = () => {
-        if (Index === Userreview.length - 1) {
+        if (Index === data.length - 1) {
             setIndex(0);
     
         }
@@ -54,7 +51,7 @@ export default function Review() {
     };
     const before = () => {
         if (Index === 0) {
-            setIndex(Userreview.length - 1);
+            setIndex(data.length - 1);
         
         } else {
             setIndex(Index - 1);
@@ -68,7 +65,8 @@ export default function Review() {
     return (
 
         <div>
-            <article className="review">
+            
+             <article className="review">
                 <div className="containerimg">
                 <img src={image} alt={name} className="person-img" />
                 <span className="quote-icon">
@@ -80,19 +78,17 @@ export default function Review() {
             <p className="job">{job}</p>
             <p className="info">{text}</p>
             <div className="button-container">
-                <button className="prev-btn" onClick={after} >
+                <button className="prev-btn" onClick={before} >
                     <FaChevronLeft />
                 </button>
                 <button className="next-btn" onClick={after}  >
                     <FaChevronRight />
                 </button>
             </div>
-            <button className="random-btn" onClick={random}  >
+            <button className="random-btn"  onClick={random}>
                 surprise me
             </button>
    </article>
-            
-
         </div>
 
     );

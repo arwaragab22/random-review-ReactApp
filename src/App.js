@@ -2,7 +2,7 @@
 import './App.css';
 import { useEffect, createContext, useState } from 'react';
 
-import './data.json'
+import  data  from './data.json';
 import Review from './reviews/review';
 export const Usercontext = createContext();
 function App() {
@@ -12,9 +12,13 @@ function App() {
     const axios = require('axios');
 
 // Make a request for a user with a given ID
-axios.get("http://localhost:3000/data.json").then(function (response) {
-  // handle success
-  setreviews(response.data);
+    axios.get("./data.json").then(function (response) {
+      // handle success
+      // setreviews(response.data);
+   
+      setreviews([...data]);
+}).catch(error => {
+    console.log(error.response)
 });
   },[])
   return (
